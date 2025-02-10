@@ -17,8 +17,8 @@ public class OrderMapper {
                 order.getId(),
                 order.getAddress(),
                 order.getCustomer(),
-                Optional.ofNullable(order.getOrderProducts()) // Handle null safely
-                .orElse(Collections.emptyList()) // Return an empty list if null
+                Optional.ofNullable(order.getOrderProducts()) 
+                .orElse(Collections.emptyList()) 
                 .stream()
                 .map(OrderMapper::toOrderProductsDTO)
                 .collect(Collectors.toList()),
